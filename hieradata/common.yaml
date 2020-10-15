@@ -1,0 +1,14 @@
+---
+classes:
+  - ntp
+  - resolver 
+  - reception
+  - kmod
+  - sysctl_settings
+kmod::list_of_loads:
+  'br_netfilter': {}
+sysctl_settings::sysctl_keys:
+  - 'net.bridge.bridge-nf-call-ip6tables'
+  - 'net.bridge.bridge-nf-call-iptables'
+sysctl_settings::sysctl_target_file: "99-kubernetes-prerequisites.conf"
+
